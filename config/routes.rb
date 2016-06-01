@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :episodes
-  root to: 'visitors#index'
   devise_for :users
+
+  resources :episodes
+  resource :subscription
+
+  root to: 'episodes#index'
+
   resources :users
+
 end
